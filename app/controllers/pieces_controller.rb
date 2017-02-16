@@ -34,6 +34,11 @@ class PiecesController < ApplicationController
     redirect_to pieces_path, notice: "楽曲を削除しました！"
   end
 
+  def confirm
+    @piece = Piece.new(pieces_params)
+    render :new if @piece.invalid?
+  end
+
   private
     def pieces_params
       params.require(:piece).permit(:title, :composer, :arranger, :publisher)
