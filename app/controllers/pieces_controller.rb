@@ -1,5 +1,5 @@
 class PiecesController < ApplicationController
-  before_action :set_piece, only: [:edit, :update]
+  before_action :set_piece, only: [:edit, :update, :destroy]
 
   def index
     @pieces = Piece.all
@@ -27,6 +27,11 @@ class PiecesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @piece.destroy
+    redirect_to pieces_path, notice: "楽曲を削除しました！"
   end
 
   private
