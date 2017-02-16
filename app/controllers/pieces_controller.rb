@@ -21,7 +21,13 @@ class PiecesController < ApplicationController
   def edit
   end
 
-  
+  def update
+    if @piece.update(pieces_params)
+      redirect_to pieces_path, notice: "楽曲情報を更新しました！"
+    else
+      render :edit
+    end
+  end
 
   private
     def pieces_params
