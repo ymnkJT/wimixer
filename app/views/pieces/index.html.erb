@@ -1,2 +1,8 @@
-<h1>Pieces#index</h1>
-<p>Find me in app/views/pieces/index.html.erb</p>
+<h1>楽曲一覧</h1>
+
+<% @pieces.each do |piece| %>
+  <p>曲名:<%= piece.title %></p>
+  <p>作曲:<%= piece.composer %></p>
+  <p>編曲:<%= piece.arranger %></p>
+  <p>出版:<%= piece.publisher %></p>
+<% end %>
