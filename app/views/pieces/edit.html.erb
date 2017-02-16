@@ -1,4 +1,7 @@
 <%= form_for(@piece) do |f| %>
+  <% @piece.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br>
