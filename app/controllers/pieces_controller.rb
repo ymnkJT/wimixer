@@ -1,4 +1,6 @@
 class PiecesController < ApplicationController
+  before_action :set_piece, only: [:edit, :update]
+
   def index
     @pieces = Piece.all
   end
@@ -19,5 +21,9 @@ class PiecesController < ApplicationController
   private
     def pieces_params
       params.require(:piece).permit(:title, :composer, :arranger, :publisher)
+    end
+
+    def set_piece
+      @piece = Piece.find(params[:id])
     end
 end
