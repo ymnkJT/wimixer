@@ -3,6 +3,7 @@ class PiecesController < ApplicationController
   end
 
   def new
+    @piece = Piece.new
   end
 
   def create
