@@ -5,6 +5,7 @@
   <p>作曲:<%= piece.composer %></p>
   <p>編曲:<%= piece.arranger %></p>
   <p>出版:<%= piece.publisher %></p>
+  <%= link_to "楽曲情報を編集する", edit_piece_path(piece.id) %>
 <% end %>
 
 <%= link_to "新規に楽曲を登録しますか？", new_piece_path %>
