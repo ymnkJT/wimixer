@@ -18,6 +18,11 @@ class PiecesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  
+
   private
     def pieces_params
       params.require(:piece).permit(:title, :composer, :arranger, :publisher)
