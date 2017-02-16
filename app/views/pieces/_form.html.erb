@@ -1,0 +1,20 @@
+<%= form_for(@piece) do |f| %>
+  <% @piece.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :composer %>
+  <%= f.text_field :composer %>
+  <br>
+  <%= f.label :arranger %>
+  <%= f.text_field :arranger %>
+  <br>
+  <%= f.label :publisher %>
+  <%= f.text_field :publisher %>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "トップ画面にもどる", pieces_path %>
