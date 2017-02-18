@@ -1,5 +1,6 @@
-class Users::RegistrationsController < Divise::RegistrationsController
+class Users::RegistrationsController < Devise::RegistrationsController
   def new
-    render layout: false
+    super
+    render layout: 'another_layout'
   end
 end

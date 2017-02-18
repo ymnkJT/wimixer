@@ -1,5 +1,6 @@
-class Users::SessionsController < Divise::SessionsController
+class Users::SessionsController < Devise::SessionsController
   def new
-    render layout: false
+    super
+    render layout: 'another_layout'
   end
 end
