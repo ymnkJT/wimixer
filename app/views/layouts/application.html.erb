@@ -27,11 +27,11 @@
                   <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                  <li><%= link_to "楽曲登録", root_path %></li>
+                  <li><%= link_to "楽曲登録", new_piece_path %></li>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to "マイページ", root_path %></li>
                   <li><%= link_to "ユーザー設定", root_path if user_signed_in? %></li>
-                  <li><%= link_to "ログアウト", root_path %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
                 </ul>
             </ul>
 
