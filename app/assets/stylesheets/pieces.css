@@ -1,6 +1,5 @@
 .wimixer_label {
-  display: block;
-  max-width: 180px;
+  max-width: 100px;
   height: auto;
   margin: 0 auto;
 }
