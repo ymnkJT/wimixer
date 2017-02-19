@@ -1,16 +1,18 @@
-<p><%= notice %></p>
-
-<h1>楽曲一覧</h1>
-
-<% @pieces.each do |piece| %>
-  <p>曲名:<%= piece.title %></p>
-  <p>作曲:<%= piece.composer %></p>
-  <p>編曲:<%= piece.arranger %></p>
-  <p>出版:<%= piece.publisher %></p>
-  <%= link_to "編集", edit_piece_path(piece.id) %>
-  <%= link_to "削除", piece_path(piece.id), method: :delete, \
-          data: { confirm: '本当に削除しますか？' } %>
-<% end %>
-
-<br>
-<%= link_to "新規に楽曲を登録しますか？", new_piece_path %>
+<div class="box container-fluid">
+  <p class="top-notice"><%= notice %></p>
+  <div class="row">
+    <% @pieces.each do |piece| %>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="piece clearfix">
+          <p>曲名:  <%= piece.title %></p>
+          <p>作曲:  <%= piece.composer %></p>
+          <p>編曲:  <%= piece.arranger %></p>
+          <p>出版:  <%= piece.publisher %></p>
+          <%= link_to "削除", piece_path(piece.id), method: :delete, \
+            data: { confirm: '本当に削除しますか？' }, class: 'btn btn-default btn-sm' %>
+          <%= link_to "編集", edit_piece_path(piece.id), class: 'btn btn-default btn-sm' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

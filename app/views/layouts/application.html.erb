@@ -17,24 +17,23 @@
             <a class="navbar-brand" href="/pieces">
               <%= image_tag 'wimixer_logo.png', :class => "wimixer_label" %>
             </a>
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"\
+                  role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="glyphicon glyphicon-th-list" height="20"></span>
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li><%= link_to "楽曲登録", new_piece_path %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to "マイページ", root_path %></li>
+                  <li><%= link_to "ユーザー設定", edit_user_registration_path %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            </ul>
           </div>
-
-          <ul class="nav navbar-nav navber-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"\
-                role="button" aria-haspopup="true" aria-expanded="false">
-                <span class="glyphicon glyphicon-th-list" height="20"></span>
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li><%= link_to "楽曲登録", new_piece_path %></li>
-                <li role="separator" class="divider"></li>
-                <li><%= link_to "マイページ", root_path %></li>
-                <li><%= link_to "ユーザー設定", edit_user_registration_path %></li>
-                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </li>
-          </ul>
         </div>
       </nav>
     </header>

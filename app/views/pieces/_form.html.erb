@@ -2,19 +2,15 @@
   <% @piece.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
   <% end %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: "form-control", placeholder: "曲名" %>
   <br>
-  <%= f.label :composer %>
-  <%= f.text_field :composer %>
+  <%= f.text_field :composer, class: "form-control", placeholder: "作曲" %>
   <br>
-  <%= f.label :arranger %>
-  <%= f.text_field :arranger %>
+  <%= f.text_field :arranger, class: "form-control", placeholder: "編曲" %>
   <br>
-  <%= f.label :publisher %>
-  <%= f.text_field :publisher %>
+  <%= f.text_field :publisher, class: "form-control", placeholder: "出版" %>
   <br>
-  <%= f.submit %>
+  <%= f.submit "登録する", class: "btn btn-success btn-block" %>
 <% end %>
 
-<%= link_to "トップ画面にもどる", pieces_path %>
+<%= link_to "戻る", pieces_path %>

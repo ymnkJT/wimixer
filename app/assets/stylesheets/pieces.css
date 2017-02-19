@@ -6,11 +6,23 @@ body {
   height: 100%;
 }
 
+h3,p {
+  color: white;
+  text-align: center;
+}
 /*ヘッダー---------------------------------------------------------------------*/
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('/assets/glyphicons-halflings-regular.eot');
   src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+.navbar-header {
+  width: 100%;
+}
+
+.navbar-nav {
+  float: right;
 }
 
 .wimixer_label {
@@ -19,8 +31,9 @@ body {
   margin: 0 auto;
 }
 
-.navber-right {
-  float:right ;
+.dropdown {
+  float: right;
+  margin-right: 10px;
 }
 /*エントランス------------------------------------------------------------------*/
 .entrance-background {
@@ -48,6 +61,35 @@ div.about h1,p {
   background-attachment: fixed;
   background-size: cover;
   background-color: #009999
+}
+
+.top-notice {
+  color: black;
+}
+
+.piece {
+  margin: 15px;
+  padding:10px;
+  background-color: rgba(40,175,148,0.7);
+  overflow: hidden;
+}
+
+.piece p {
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.piece .btn {
+  float: right;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 /*フォーム関連------------------------------------------------------------------*/
 .box {
