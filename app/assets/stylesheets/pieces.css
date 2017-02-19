@@ -10,6 +10,11 @@ h3,p {
   color: white;
   text-align: center;
 }
+
+li {
+  color: white;
+  list-style-type: none;
+}
 /*ヘッダー---------------------------------------------------------------------*/
 @font-face {
   font-family: 'Glyphicons Halflings';
