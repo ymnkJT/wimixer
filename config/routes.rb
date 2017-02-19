@@ -5,13 +5,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :pieces, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :pieces do
+    resources :comments
+
     collection do
       post :confirm
     end
-  end
-
-  resources :pieces do
-    resources :comments
   end
 end
