@@ -1,0 +1,19 @@
+<div class="box container-fluid">
+  <div class="box row">
+    <div class="form-aria col-sm-6 col-sm-offset-3">
+      <h3>楽曲の感想を記録する</h3>
+
+      <%= form_for([:piece, @comment]) do |f| %>
+
+        <%= f.text_field :content, class: "form-control", placeholder: "コメント" %>
+        <br>
+        <%= f.check_box :play %>
+        <%= f.label :演奏したことがある %>
+        <br>
+        <%= f.submit "記録する", class: "btn btn-success btn-block" %>
+      <% end %>
+
+      <%= link_to "戻る", pieces_path %>
+    </div>
+  </div>
+</div>
