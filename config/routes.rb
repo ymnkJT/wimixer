@@ -10,4 +10,8 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+
+  resources :pieces do
+    resources :comments
+  end
 end
