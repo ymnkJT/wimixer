@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <body class="top-background">
     <header>
       <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -20,27 +20,29 @@
           </div>
 
           <ul class="nav navbar-nav navber-right">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"\
-                  role="button" aria-haspopup="true" aria-expanded="false">
-                  <span class="glyphicon glyphicon-th-list" height="20"></span>
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li><%= link_to "楽曲登録", new_piece_path %></li>
-                  <li role="separator" class="divider"></li>
-                  <li><%= link_to "マイページ", root_path %></li>
-                  <li><%= link_to "ユーザー設定", edit_user_registration_path %></li>
-                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-                </ul>
-            </ul>
-
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"\
+                role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-th-list" height="20"></span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><%= link_to "楽曲登録", new_piece_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "マイページ", root_path %></li>
+                <li><%= link_to "ユーザー設定", edit_user_registration_path %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
-  <% end %>
-
-<%= yield %>
-
-</body>
+    <%= yield %>
+  </body>
+<% else %>
+  <body class="entrance-background">
+    <%= yield %>
+  </body>
+<% end %>
 </html>

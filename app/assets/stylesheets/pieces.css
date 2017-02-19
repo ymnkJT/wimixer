@@ -1,3 +1,12 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+/*ヘッダー---------------------------------------------------------------------*/
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('/assets/glyphicons-halflings-regular.eot');
@@ -12,4 +21,53 @@
 
 .navber-right {
   float:right ;
+}
+/*エントランス------------------------------------------------------------------*/
+.entrance-background {
+  background-image: url(instrument-843024_1920.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #009999
+}
+
+.about {
+  height: 100%;
+  padding: 15% 5% 25% 5%;
+}
+
+div.about h1,p {
+  color: white;
+}
+/*トップ-----------------------------------------------------------------------*/
+.top-background {
+  background-image: url(saxophone-1531253_1920.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #009999
+}
+/*フォーム関連------------------------------------------------------------------*/
+.box {
+  height: 100%;
+}
+
+.form-aria {
+  height: 100%;
+  padding: 10% 5% 25% 5%;
+  background-color: rgba(25,25,25,0.5);
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.actions {
+  margin-bottom: 20px;
+}
+
+div.form-aria h3,label,a,em {
+  color: white;
 }
