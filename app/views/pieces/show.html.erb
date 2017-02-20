@@ -1,0 +1,20 @@
+<div class="box container-fluid">
+  <div class="box row">
+    <div class="form-aria col-sm-6 col-sm-offset-3">
+      <p>曲名:  <%= @piece.title %></p>
+      <p>作曲:  <%= @piece.composer %></p>
+      <p>編曲:  <%= @piece.arranger %></p>
+      <p>出版:  <%= @piece.publisher %></p>
+      <% @comments.each do |comment| %>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="piece clearfix">
+            <p>コメント:  <%= comment.content %></p>
+              <%= link_to "削除", piece_path(piece.id), method: :delete, \
+                data: { confirm: '本当に削除しますか？' }, class: 'btn btn-default btn-sm' %>
+              <%= link_to "編集", edit_piece_path(piece.id), class: 'btn btn-default btn-sm' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

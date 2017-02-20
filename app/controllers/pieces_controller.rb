@@ -1,8 +1,12 @@
 class PiecesController < ApplicationController
-  before_action :set_piece, only: [:edit, :update, :destroy]
+  before_action :set_piece, only: [:show, :edit, :update, :destroy]
 
   def index
     @pieces = Piece.all
+  end
+
+  def show
+    @comments = @piece.comments
   end
 
   def new
