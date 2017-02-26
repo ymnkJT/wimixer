@@ -134,7 +134,7 @@ div.about h1,p {
 div.form-aria h3,label,a,em {
   color: white;
 }
-
+/*コメント関連------------------------------------------------------------------*/
 .comment {
   border-bottom: 1px solid #ccc;
   padding: 10px;
@@ -142,4 +142,8 @@ div.form-aria h3,label,a,em {
 
 .comment p {
   text-align: left;
+}
+
+.comment .btn {
+  float: right;
 }
