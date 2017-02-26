@@ -5,12 +5,12 @@
       <p>作曲:  <%= @piece.composer %></p>
       <p>編曲:  <%= @piece.arranger %></p>
       <p>出版:  <%= @piece.publisher %></p>
-      <%= link_to "コメントする", new_piece_comment_path(@piece.id) %><br>
+      <%= link_to "コメントする", new_piece_comment_path(@piece.id), class: 'btn btn-success btn-block' %><br>
       <% @comments.each do |comment| %>
       <% unless comment.id.nil? %>
         <div>
           <div>
-            <p>コメント:  <%= comment.content %></p>
+            <p><%= comment.user.nickname %>:  <%= comment.content %></p>
               <%= link_to "削除", piece_path(@piece.id), method: :delete, \
                 data: { confirm: '本当に削除しますか？' }, class: 'btn btn-default btn-sm' %>
               <%= link_to "編集", edit_piece_path(@piece.id), class: 'btn btn-default btn-sm' %>
