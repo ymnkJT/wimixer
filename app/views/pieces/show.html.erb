@@ -1,14 +1,17 @@
 <div class="box container-fluid">
   <div class="box row">
-    <div class="form-aria col-sm-6 col-sm-offset-3">
-      <p>曲名:  <%= @piece.title %></p>
-      <p>作曲:  <%= @piece.composer %></p>
-      <p>編曲:  <%= @piece.arranger %></p>
-      <p>出版:  <%= @piece.publisher %></p>
+    <div class="form-aria col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+      <ul>
+        <li>曲名:  <%= @piece.title %></li>
+        <li>作曲:  <%= @piece.composer %></li>
+        <li>編曲:  <%= @piece.arranger %></li>
+        <li>出版:  <%= @piece.publisher %></li>
+      </ul>
       <%= link_to "コメントする", new_piece_comment_path(@piece.id), class: 'btn btn-success btn-block' %><br>
+      <h4>〜コメント一覧〜</h4>
       <% @comments.each do |comment| %>
       <% unless comment.id.nil? %>
-        <div>
+        <div class="comment">
           <div>
             <p><%= comment.user.nickname %>:  <%= comment.content %></p>
               <%= link_to "削除", piece_path(@piece.id), method: :delete, \

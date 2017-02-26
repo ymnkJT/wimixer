@@ -6,7 +6,7 @@ body {
   height: 100%;
 }
 
-h3,p {
+h3,h4,p {
   color: white;
   text-align: center;
 }
@@ -133,4 +133,13 @@ div.about h1,p {
 
 div.form-aria h3,label,a,em {
   color: white;
+}
+
+.comment {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.comment p {
+  text-align: left;
 }
