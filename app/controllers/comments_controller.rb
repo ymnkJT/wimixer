@@ -1,14 +1,15 @@
 class CommentsController < ApplicationController
   def new
+    @piece = Piece.find(params[:piece_id])
     @comment = Comment.new
-    @piece = @comment.piece
   end
 
   def create
     @comment = current_user.comments.build(comment_params)
+    @comment.piece_id = params[:piece_id]
     @piece = @comment.piece
     if @comment.save
-      redirect_to pieces_path, notice: "感想を記録しました！"
+      redirect_to pieces_path(@piece), notice: "感想を記録しました！"
     else
       render :new
     end

@@ -6,6 +6,7 @@ class PiecesController < ApplicationController
   end
 
   def show
+    @comment = @piece.comments.build
     @comments = @piece.comments
   end
 
