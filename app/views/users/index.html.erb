@@ -1,0 +1,19 @@
+<div class="box container-fluid">
+  <p class="top-notice"><%= notice %></p>
+  <div class="row">
+    <div class="form-aria col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+      <h4>〜あなたのコメント一覧〜</h4>
+      <% @comments.each do |comment| %>
+      <% unless comment.id.nil? %>
+        <div class="comment clearfix">
+          <div>
+            <p><%= comment.piece.title %>(<%=comment.created_at.strftime("%y/%m/%d %p %l:%M") %>)</p>
+            <p><%= comment.content %></p>
+          </div>
+        </div>
+      <% end %>
+      <% end %>
+      <%= link_to "戻る", pieces_path %>
+    </div>
+  </div>
+</div>
