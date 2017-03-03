@@ -5,7 +5,7 @@
 
       <%= form_for([@piece, @comment]) do |f| %>
         <%= f.hidden_field :piece_id %>
-        <%= f.text_field :content, class: "form-control", placeholder: "コメント" %>
+        <%= f.text_area :content, class: "form-control", placeholder: "コメント", rows: 10 %>
         <br>
         <%= f.check_box :play %>
         <%= f.label :演奏したことがある %>
