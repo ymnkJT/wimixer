@@ -9,9 +9,20 @@ class CommentsController < ApplicationController
     @comment.piece_id = params[:piece_id]
     @piece = @comment.piece
     if @comment.save
-      redirect_to piece_path(@piece), notice: "感想を記録しました！"
+      redirect_to piece_path(@piece), notice: "コメントを記録しました！"
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @comment.update(comment_params)
+      redirect_to piece_path(@piece), notice: "コメントを編集しました！"
+    else
+      render :edit
     end
   end
 
