@@ -30,6 +30,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @piece = @comment.piece
+    @comment.destroy
+    redirect_to piece_path(@piece), notice: "コメントを削除しました！"
+  end
+
   private
     def comment_params
       params.require(:comment).permit(:piece_id, :content, :play)
