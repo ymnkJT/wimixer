@@ -2,7 +2,8 @@ Rails.application.configure do
   config.cache_classes = true
   config.eager_load = true
   config.consider_all_requests_local       = false
-  # config.action_controller.perform_caching = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.action_controller.perform_caching = true
+  config.serve_static_files = true
   config.action_controller.perform_caching = true
   config.assets.js_compressor = :uglifier
   config.assets.compile = true
