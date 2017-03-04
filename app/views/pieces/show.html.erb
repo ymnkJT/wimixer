@@ -14,13 +14,16 @@
       <% @comments.each do |comment| %>
       <% unless comment.id.nil? %>
         <div class="comment clearfix">
-          <div>
-            <p><%= comment.user.nickname %>(<%=comment.created_at.strftime("%y/%m/%d %p %l:%M") %>)</p>
-            <p><%= comment.content %></p>
-              <%= link_to "削除", piece_comment_path(@piece.id, comment.id), method: :delete, \
-                data: { confirm: '本当に削除しますか？' }, class: 'btn btn-default btn-sm' %>
-              <%= link_to "編集", edit_piece_comment_path(@piece.id, comment.id), class: 'btn btn-default btn-sm' %>
+          <div class="title">
+            <%= comment.user.nickname %>(<%=comment.created_at.strftime("%y/%m/%d %p %l:%M") %>)
           </div>
+          <% if comment.play == true then %>
+            <div class="label label-primary">演奏した</div>
+          <% end %><br>
+          <p><%= comment.content %></p>
+          <%= link_to "削除", piece_comment_path(@piece.id, comment.id), method: :delete, \
+            data: { confirm: '本当に削除しますか？' }, class: 'btn btn-default btn-sm' %>
+          <%= link_to "編集", edit_piece_comment_path(@piece.id, comment.id), class: 'btn btn-default btn-sm' %>
         </div>
       <% end %>
       <% end %>

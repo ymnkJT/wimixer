@@ -121,6 +121,7 @@ div.about h1,p {
   height: 100%;
   padding: 10% 5% 25% 5%;
   background-color: rgba(25,25,25,0.5);
+  word-break: break-word;
 }
 
 .field {
@@ -138,6 +139,7 @@ div.form-aria h3,label,a,em {
 .comment {
   border-bottom: 1px solid #ccc;
   padding: 10px;
+  word-break: break-word;
 }
 
 .comment p {
@@ -145,5 +147,15 @@ div.form-aria h3,label,a,em {
 }
 
 .comment .btn {
+  float: right;
+}
+
+.title {
+  width: 85%;
+  float: left;
+  color: white;
+}
+
+.label {
   float: right;
 }

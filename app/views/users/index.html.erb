@@ -6,10 +6,13 @@
       <% @comments.each do |comment| %>
       <% unless comment.id.nil? %>
         <div class="comment clearfix">
-          <div>
-            <p><%= comment.piece.title %>(<%=comment.created_at.strftime("%y/%m/%d %p %l:%M") %>)</p>
-            <p><%= comment.content %></p>
+          <div class="title">
+            <%= comment.piece.title %> (<%=comment.created_at.strftime("%y/%m/%d %p %l:%M") %>)
           </div>
+          <% if comment.play == true then %>
+            <div class="label label-primary">演奏した</div>
+          <% end %><br>
+          <p><%= comment.content %></p>
         </div>
       <% end %>
       <% end %>
