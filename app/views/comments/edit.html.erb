@@ -3,19 +3,8 @@
     <div class="form-aria col-sm-6 col-sm-offset-3">
       <h3>コメントを編集する</h3>
 
-      <%= form_for([@piece,@comment]) do |f| %>
-        <%= f.hidden_field :piece_id %>
-        <%= f.text_area :content, class: "form-control", placeholder: "コメント", rows: 10 %>
-        <br>
-        <%= f.check_box :play %>
-        <%= f.label :演奏したことがある %>
-        <br>
-        <%= f.text_area :memo, class: "form-control", placeholder: "メモ", rows: 5 %>
-        <br>
-        <%= f.submit "記録する", class: "btn btn-success btn-block" %>
-      <% end %>
+      <%= render 'form' %>
 
-      <%= link_to "戻る", piece_path(@piece) %>
     </div>
   </div>
 </div>
