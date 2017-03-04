@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :set_comment, only: [:edit, :update, :destroy]
+
   def new
     @piece = Piece.find(params[:piece_id])
     @comment = Comment.new
@@ -16,13 +18,9 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
-    @piece = @comment.piece
   end
 
   def update
-    @comment = Comment.find(params[:id])
-    @piece = @comment.piece
     if @comment.update(comment_params)
       redirect_to piece_path(@piece), notice: "コメントを編集しました！"
     else
@@ -31,8 +29,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
-    @piece = @comment.piece
     @comment.destroy
     redirect_to piece_path(@piece), notice: "コメントを削除しました！"
   end
@@ -40,5 +36,10 @@ class CommentsController < ApplicationController
   private
     def comment_params
       params.require(:comment).permit(:piece_id, :content, :memo, :play)
+    end
+
+    def set_comment
+      @comment = Comment.find(params[:id])
+      @piece = @comment.piece
     end
 end
