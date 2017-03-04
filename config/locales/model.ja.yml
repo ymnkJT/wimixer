@@ -1,18 +1,22 @@
 ja:
   activerecord:
     models:
-      piece: "楽曲"
-      user : "ユーザー"
+      piece  : "楽曲"
+      user   : "ユーザー"
+      comment: "コメント"
     attributes:
       piece:
-        title:     "曲名"
-        composer:  "作曲"
-        arranger:  "編曲"
+        title    :     "曲名"
+        composer :  "作曲"
+        arranger :  "編曲"
         publisher: "出版"
       user:
-        nickname: "ニックネーム"
-        email:    "メールアドレス"
-        current_password: "現在のパスワード"
-        password: "パスワード"
+        nickname             : "ニックネーム"
+        email                :    "メールアドレス"
+        current_password     : "現在のパスワード"
+        password             : "パスワード"
         password_confirmation: "確認用パスワード"
-        remember_me: "ログインを記憶"
+        remember_me          : "ログインを記憶"
+      comment:
+        content: "コメント"
+        memo   : "メモ"
