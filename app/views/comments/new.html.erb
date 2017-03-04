@@ -10,6 +10,8 @@
         <%= f.check_box :play %>
         <%= f.label :演奏したことがある %>
         <br>
+        <%= f.text_area :memo, class: "form-control", placeholder: "メモ", rows: 5 %>
+        <br>
         <%= f.submit "記録する", class: "btn btn-success btn-block" %>
       <% end %>
 
