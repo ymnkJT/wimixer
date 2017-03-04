@@ -8,13 +8,19 @@
         <div class="comment clearfix">
           <div class="title">
             <%= link_to piece_path(comment.piece) do %>
-            <%= comment.piece.title %> (<%=comment.created_at.strftime("%y/%m/%d %p %l:%M") %>)
+              <%= comment.piece.title %> (<%=comment.created_at.strftime("%y/%m/%d %p %l:%M") %>)
             <% end %>
           </div>
 
           <% if comment.play == true then %>
             <div class="label label-primary">演奏した</div>
           <% end %><br>
+
+          <div class="button-bar clearfix">
+          <%= link_to "削除", piece_comment_path(comment.piece.id, comment.id), method: :delete, \
+            data: { confirm: '本当に削除しますか？' }, class: 'btn btn-default btn-sm' %>
+          <%= link_to "編集", edit_piece_comment_path(comment.piece.id, comment.id), class: 'btn btn-default btn-sm' %>
+          </div>
 
           <div class="content">
             《コメント》<br>

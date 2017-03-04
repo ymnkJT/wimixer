@@ -174,3 +174,7 @@ div.form-aria h3,label,a,em {
 .label {
   float: right;
 }
+
+.button-bar {
+  width: 100%;
+}
