@@ -14,8 +14,15 @@
             <div class="label label-primary">演奏した</div>
           <% end %><br>
 
-          <div class="content"><%= comment.content %></div>
-          <div class="content"><%= comment.memo %></div>
+          <div class="content">
+            《コメント》<br>
+            <%= comment.content %>
+          </div>
+
+          <div class="memo">
+            《メモ》<br>
+            <%= comment.memo %>
+          </div>
         </div>
       <% end %>
       <% end %>
