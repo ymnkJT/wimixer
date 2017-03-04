@@ -19,3 +19,5 @@ end
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'pry-rails'
+
+gem 'rails_12factor', group: :production
