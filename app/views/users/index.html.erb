@@ -7,7 +7,9 @@
       <% unless comment.id.nil? %>
         <div class="comment clearfix">
           <div class="title">
+            <%= link_to piece_path(comment.piece) do %>
             <%= comment.piece.title %> (<%=comment.created_at.strftime("%y/%m/%d %p %l:%M") %>)
+            <% end %>
           </div>
 
           <% if comment.play == true then %>
