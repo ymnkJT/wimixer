@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :pieces do
-    resources :comments
+    resources :comments, only: [:new, :create, :edit, :update, :destroy]
 
     collection do
       post :confirm
