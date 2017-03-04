@@ -7,6 +7,7 @@
           <%= link_to piece_path(piece) do %>
             <p>曲名:  <%= piece.title %></p>
           <% end %>
+          <p>コメント数:  <%= piece.comments.size %></p>
           <%= link_to "削除", piece_path(piece.id), method: :delete, \
             data: { confirm: '本当に削除しますか？' }, class: 'btn btn-default btn-sm' %>
           <%= link_to "編集", edit_piece_path(piece.id), class: 'btn btn-default btn-sm' %>
