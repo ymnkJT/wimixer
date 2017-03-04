@@ -156,6 +156,10 @@ div.form-aria h3,label,a,em {
   color: white;
 }
 
+.content {
+  color: white;
+}
+
 .label {
   float: right;
 }
